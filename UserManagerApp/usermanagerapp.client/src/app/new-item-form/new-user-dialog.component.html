@@ -1,0 +1,24 @@
+<div class="dialog-container">
+  <h2>Add New User</h2>
+  <form (ngSubmit)="onSave()" [formGroup]="newItemForm">
+    <div class="form-group">
+      <label for="login">Login:</label>
+      <input type="text" id="login" formControlName="login">
+      <div class="error-description" *ngIf="isFieldInvalid('login')">Login is required</div>
+    </div>
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" formControlName="firstName">
+      <div class="error-description" *ngIf="isFieldInvalid('firstName')">First Name is required</div>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" formControlName="lastName">
+      <div class="error-description" *ngIf="isFieldInvalid('lastName')">Last Name is required</div>
+    </div>
+    <div class="form-actions">
+      <button type="submit">Save</button>
+      <button type="button" (click)="onCancel()">Cancel</button>
+    </div>
+  </form>
+</div>

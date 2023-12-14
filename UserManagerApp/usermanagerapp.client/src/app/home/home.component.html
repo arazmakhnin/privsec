@@ -1,0 +1,24 @@
+<div class="container">
+  <button class="new-item-button" (click)="createNewUser()">Create New</button>
+
+  <div class="list-container">
+    <ul class="user-list">
+      <li *ngFor="let item of users" (click)="selectItem(item)" [class.selected]="item === selectedItem">
+        <span>{{ item.login }}</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="details-container" *ngIf="selectedItem">
+    <p>
+      <strong>Login:</strong> {{ selectedItem.login }}
+    </p>
+    <p>
+      <strong>First Name:</strong> {{ selectedItem.firstName }}
+    </p>
+    <p>
+      <strong>Last Name:</strong> {{ selectedItem.lastName }}
+    </p>
+  </div>
+</div>
+
